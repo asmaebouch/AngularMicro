@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div><section class="table__header">
-    <h1>Liste Des Clients</h1>
+    <h1>Liste Des Commandes</h1>
     <div class="input-group">
 
     </div>
@@ -10,9 +10,10 @@
       <thead class="thead">
       <br><br>
       <tr>
-        <th>Nom Client</th>
-        <th>Email</th>
-        <th>Numéro Command</th>
+        <th>libellée</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
         <th style="font-weight: bold; color: #1784f1"> Action Modifier</th>
         <th style="font-weight: bold; color: #b80434"> Action Supprimer</th>
       </tr>
@@ -21,9 +22,10 @@
       </thead>
       <tbody class="tbody">
       <tr *ngFor = "let client of  studentDetails" >
-        <td>{{ client.name}}</td>
-        <td>{{ client.email}}</td>
-        <td>{{ client.commandId}}</td>
+        <td>{{ client.libelle}}</td>
+        <td>{{ client.description}}</td>
+        <td>{{ client.price}}</td>
+        <td>{{ client.quantity}}</td>
 
 
         <td>

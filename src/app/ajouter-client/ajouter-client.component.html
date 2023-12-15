@@ -3,7 +3,7 @@
 
   <div class="form_container " >
     <div class="title_container">
-      <h2 class="text-center">FORMULAIRE  CLIENT </h2>
+      <h2 class="text-center" style="color: #37314e; padding: 10px;">Formulaire Client</h2>
     </div>
     <div class="row clearfix">
       <div class="">
@@ -14,8 +14,8 @@
             <input type="text" #name (ngModel)="name" name="name" id="name" class="form-control"
                    placeholder="Nom Du Client *" required>
             <label for="commandId">Command </label>
-            <input type="number" #commandId (ngModel)="commandId" name="commandId" id="commandId" class="form-control"
-                   placeholder="Command Id *" required>
+            <input type="number" [(ngModel)]="commandId" name="commandId" id="commandId" class="form-control" placeholder="Command Id *" required>
+
 
             <label for="email">Email </label>
             <input type="email" #email (ngModel)="email" name="email" id="email" class="form-control" placeholder="Email *" required>
@@ -24,7 +24,7 @@
           <div class="form-group">
             <div class="d-flex justify-content-center align-items-center">
 
-              <input type="submit" value="Enregistrer" class="btn btn-warning btn-lg mt-5 ms-2 ">
+              <input type="submit" value="Enregistrer" class="btn btn-danger btn-lg text-center">
 
             </div>
           </div>

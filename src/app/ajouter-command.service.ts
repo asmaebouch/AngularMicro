@@ -5,10 +5,10 @@ import {Observable} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class AjouterClientService {
+export class AjouterCommandService {
 
   constructor(private http: HttpClient) {}
-  PATH_OF_API="http://localhost:8888/CLIENT-SERVICE/cli1";
+  PATH_OF_API="http://localhost:8888/COMMAND-SERVICE/command";
 
   EnregistrerClient(formData: any, headers: any): Observable<any> {
     const httpOptions = {
@@ -16,7 +16,7 @@ export class AjouterClientService {
       withCredentials: true  // Include this if your server requires credentials
     };
 
-    return this.http.post(`${this.PATH_OF_API}`, formData, httpOptions);
+    return this.http.post(`${this.PATH_OF_API}`+"/Save", formData, httpOptions);
   }
   public getClient(){
     return this.http.get(this.PATH_OF_API);

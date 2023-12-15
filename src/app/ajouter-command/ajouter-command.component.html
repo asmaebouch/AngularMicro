@@ -1,0 +1,41 @@
+
+<div class="form_wrapper mt-4" style="align-items:center;"style="width: 150vh;">
+
+  <div class="form_container " >
+    <div class="title_container justify-content-center">
+      <h2 class="text-center" style="color: #37314e; padding: 10px;">Formulaire Commande</h2>
+    </div>
+    <div class="row clearfix">
+      <div class="">
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+
+          <div class="form-group">
+            <label for="libelle">Libelle Commande</label>
+            <input type="text" #libelle (ngModel)="libelle" name="libelle" id="libelle" class="form-control"
+                   placeholder="libelle *" required>
+            <label for="description">description </label>
+            <input type="text" #description (ngModel)="description" name="description" id="description" class="form-control" placeholder="description *" required>
+            <label for="price">price </label>
+            <input type="number" #price (ngModel)="price" name="price" id="price" class="form-control" placeholder="price *" required>
+
+            <label for="quantity">quantity </label>
+            <input type="number" #quantity (ngModel)="quantity" name="quantity" id="quantity" class="form-control" placeholder="quantity *" required>
+          </div>
+
+          <div class="form-group">
+            <div class="d-flex justify-content-center ">
+
+              <input type="submit" value="Enregistrer" class="btn btn-danger btn-lg text-center">
+
+            </div>
+          </div>
+          <br>
+          <!--  <div class="alert  alert-success alert-dismissible fade show" role="alert" id="successAlert" >
+              <strong>Client Ajouter avec  Success! </strong>
+
+            </div>-->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

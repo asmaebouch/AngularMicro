@@ -8,7 +8,8 @@ import {AjouterClientService} from "../ajouter-client.service";
 })
 export class ListClientComponent {
   studentDetails =null;
-
+  itemsPerPage: number = 8;
+  currentPage: number = 1;
   constructor(private clientService: AjouterClientService,) {
     this.getProjetDetails();
   }
@@ -39,8 +40,34 @@ export class ListClientComponent {
       (resp) => {
         console.log(resp);
         alert("Client a bien été supprimé");
+        this.getProjetDetails();
+
       },
       (err) => console.log(err)
     );
+  }
+  get paginatedItems(): any[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    //   return this.users?.slice(startIndex, endIndex);
+
+    // @ts-ignore
+    return this.studentDetails.slice(startIndex, endIndex);
+  }
+  previousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  get totalPages(): number {
+    // @ts-ignore
+    return Math.ceil(this.studentDetails.length / this.itemsPerPage);
   }
 }

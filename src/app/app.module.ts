@@ -9,13 +9,17 @@ import {HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListClientComponent } from './list-client/list-client.component';
 import { HeaderComponent } from './header/header.component';
+import { AjouterCommandComponent } from './ajouter-command/ajouter-command.component';
+import { ListerCommandComponent } from './lister-command/lister-command.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AjouterClientComponent,
     ListClientComponent,
-    HeaderComponent
+    HeaderComponent,
+    AjouterCommandComponent,
+    ListerCommandComponent
   ],
   imports: [
     BrowserModule,
